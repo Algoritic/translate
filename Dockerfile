@@ -10,7 +10,12 @@ COPY . .
 # Install any dependencies
 RUN npm install
 
-# Make port 3000 available to the world outside this container
+# Explicitly install Angular CLI globally
+RUN npm install -g @angular/cli
+# Explicitly install @angular-devkit/build-angular
+RUN npm install @angular-devkit/build-angular
+
+# Make port 4200 available to the world outside this container
 EXPOSE 4200
 
 # Run the app when the container launches
